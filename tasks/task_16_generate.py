@@ -36,4 +36,11 @@ with torch.no_grad():
     fake_img = model(noise)
 
     fig, axes = plt.subplots(4, 4, figsize=(8,8))
+
+    for i, ax in enumerate(axes.flat):
+        img = fake_img[i].squeeze().numpy()
+        ax.imshow(img, cmap='gray')
+        ax.axis('off')
     
+    plt.suptitle("AI generated images")
+    plt.show()
