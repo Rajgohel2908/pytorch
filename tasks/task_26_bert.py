@@ -1,6 +1,6 @@
 from transformers import pipeline
 
-classifier = pipeline("sentiment-analysis")
+classifier = pipeline("sentiment-analysis", model="bert-base-multilingual-uncased-sentiment")
 
 sentences = [
     "I love PyTorch, it's the best!",
